@@ -7,7 +7,10 @@ body{
 }
 .card{
     text-transform: capitalize;
-    
+}
+.reject{
+color:grey;
+
     
 }
 .card-title{

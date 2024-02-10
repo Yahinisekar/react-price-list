@@ -9,14 +9,14 @@ const Home = () => {
     buttonText: "button",
     link:"https://www.google.com/",
     list: [
-      { id: 1, name: 'Single User',icon:<i class="fa-solid fa-check"></i> },
-      { id: 2, name: '50GB Storage',icon:<i class="fa-solid fa-check"></i> },
-      { id: 3, name: 'Unlimited Public Projects',icon:<i class="fa-solid fa-check"></i> },
-      { id: 4, name: 'Community Access',icon:<i class="fa-solid fa-check"></i> },
-      { id: 5, name: <span style={{ color:'grey'}}>Unlimited Private Projects</span>,icon:<i class="fa-solid fa-xmark"></i> },
-      { id: 6, name:<span style={{ color:'grey'}}> Dedicated Phone Support</span>,icon:<i class="fa-solid fa-xmark"></i> },
-      { id: 7, name:<span style={{ color:'grey'}}> Free Subdomain</span>,icon:<i class="fa-solid fa-xmark"></i> },
-      { id: 8, name: <span style={{ color:'grey'}}>Monthly Status Reports</span>,icon:<i class="fa-solid fa-xmark"></i> },]
+      { id: 1, name: 'Single User', access:'yes'},
+      { id: 2, name: '50GB Storage', access:'yes'},
+      { id: 3, name: 'Unlimited Public Projects', access:'yes'},
+      { id: 4, name: 'Community Access', access:'yes'},
+      { id: 5, name: 'Unlimited Private Projects', access:'no'},
+      { id: 6, name: 'Dedicated Phone Support', access:'no'},
+      { id: 7, name: 'Free Subdomain', access:'no'},
+      { id: 8, name: 'Monthly Status Reports', access:'no'},]
     },
     {
     id: 2,
@@ -25,14 +25,14 @@ const Home = () => {
     buttonText: "button",
     link:"https://www.google.com/",
     list: [
-      { id: 1, name: '5 Users',icon:<i class="fa-solid fa-check"></i> },
-      { id: 2, name: '50GB Storage',icon:<i class="fa-solid fa-check"></i> },
-      { id: 3, name: 'Unlimited Public Projects',icon:<i class="fa-solid fa-check"></i> },
-      { id: 4, name: 'Community Access',icon:<i class="fa-solid fa-check"></i> },
-      { id: 5, name: 'Unlimited Private Projects',icon:<i class="fa-solid fa-check"></i> },
-      { id: 6, name: 'Dedicated Phone Support',icon:<i class="fa-solid fa-check"></i> },
-      { id: 7, name: 'Free Subdomain',icon:<i class="fa-solid fa-check"></i> },
-      { id: 8, name: <span style={{ color:'grey'}}>Monthly Status Reports</span> ,icon:<i class="fa-solid fa-xmark"></i>},]
+      { id: 1, name: '5 Users', access:'yes'},
+      { id: 2, name: '50GB Storage', access:'yes'},
+      { id: 3, name: 'Unlimited Public Projects', access:'yes'},
+      { id: 4, name: 'Community Access', access:'yes'},
+      { id: 5, name: 'Unlimited Private Projects', access:'yes'},
+      { id: 6, name: 'Dedicated Phone Support', access:'yes'},
+      { id: 7, name: 'Free Subdomain', access:'yes'},
+      { id: 8, name: 'Monthly Status Reports' , access:'no'},]
   },
     {
     id: 3,
@@ -41,14 +41,14 @@ const Home = () => {
     buttonText: "button",
     link:"https://www.google.com/",
     list: [
-      { id: 1, name: 'Unlimited users',icon:<i class="fa-solid fa-check"></i> },
-      { id: 2, name: '50GB Storage',icon:<i class="fa-solid fa-check"></i> },
-      { id: 3, name: 'Unlimited Public Projects',icon:<i class="fa-solid fa-check"></i> },
-      { id: 4, name: 'Community Access',icon:<i class="fa-solid fa-check"></i> },
-      { id: 5, name: 'Unlimited Private Projects',icon:<i class="fa-solid fa-check"></i> },
-      { id: 6, name: 'Dedicated Phone Support',icon:<i class="fa-solid fa-check"></i> },
-      { id: 7, name: 'Free Subdomain',icon:<i class="fa-solid fa-check"></i> },
-      { id: 8, name: 'Monthly Status Reports',icon:<i class="fa-solid fa-check"></i> },]
+      { id: 1, name: 'Unlimited users', access:'yes'},
+      { id: 2, name: '50GB Storage', access:'yes'},
+      { id: 3, name: 'Unlimited Public Projects', access:'yes'},
+      { id: 4, name: 'Community Access', access:'yes'},
+      { id: 5, name: 'Unlimited Private Projects', access:'yes'},
+      { id: 6, name: 'Dedicated Phone Support', access:'yes'},
+      { id: 7, name: 'Free Subdomain', access:'yes'},
+      { id: 8, name: 'Monthly Status Reports', access:'yes'},]
   },
   ]
   return (
@@ -69,9 +69,9 @@ const Home = () => {
                       <>
                         
                         <li key={index} className="list-group-item border-bottom-0">
-                         {item.filter} 
-                          {item.icon}
-                         <span className='ms-2'> {item.name}</span></li>
+                          
+                          {item.access=='no'?<i class="fa-solid fa-xmark"></i>:<i class="fa-solid fa-check"></i>}
+                          <span className={`${item.access === 'no' ? 'reject' : 'access'} ${'ms-2'}`}> {item.name}</span></li>
                        </>
                     )
                     }
