@@ -13,10 +13,10 @@ const Home = () => {
       { id: 2, name: '50GB Storage',icon:<i class="fa-solid fa-check"></i> },
       { id: 3, name: 'Unlimited Public Projects',icon:<i class="fa-solid fa-check"></i> },
       { id: 4, name: 'Community Access',icon:<i class="fa-solid fa-check"></i> },
-      { id: 5, name: 'Unlimited Private Projects',icon:<i class="fa-solid fa-xmark"></i> },
-      { id: 6, name: 'Dedicated Phone Support',icon:<i class="fa-solid fa-xmark"></i> },
-      { id: 7, name: 'Free Subdomain',icon:<i class="fa-solid fa-xmark"></i> },
-      { id: 8, name: 'Monthly Status Reports',icon:<i class="fa-solid fa-xmark"></i> },]
+      { id: 5, name: <span style={{ color:'grey'}}>Unlimited Private Projects</span>,icon:<i class="fa-solid fa-xmark"></i> },
+      { id: 6, name:<span style={{ color:'grey'}}> Dedicated Phone Support</span>,icon:<i class="fa-solid fa-xmark"></i> },
+      { id: 7, name:<span style={{ color:'grey'}}> Free Subdomain</span>,icon:<i class="fa-solid fa-xmark"></i> },
+      { id: 8, name: <span style={{ color:'grey'}}>Monthly Status Reports</span>,icon:<i class="fa-solid fa-xmark"></i> },]
     },
     {
     id: 2,
@@ -32,7 +32,7 @@ const Home = () => {
       { id: 5, name: 'Unlimited Private Projects',icon:<i class="fa-solid fa-check"></i> },
       { id: 6, name: 'Dedicated Phone Support',icon:<i class="fa-solid fa-check"></i> },
       { id: 7, name: 'Free Subdomain',icon:<i class="fa-solid fa-check"></i> },
-      { id: 8, name: 'Monthly Status Reports' ,icon:<i class="fa-solid fa-xmark"></i>},]
+      { id: 8, name: <span style={{ color:'grey'}}>Monthly Status Reports</span> ,icon:<i class="fa-solid fa-xmark"></i>},]
   },
     {
     id: 3,
@@ -69,7 +69,7 @@ const Home = () => {
                       <>
                         
                         <li key={index} className="list-group-item border-bottom-0">
-                          {/* <i class="fa-solid fa-check"></i> */}
+                         {item.filter} 
                           {item.icon}
                          <span className='ms-2'> {item.name}</span></li>
                        </>

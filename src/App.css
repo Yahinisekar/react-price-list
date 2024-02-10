@@ -38,3 +38,6 @@ body{
     padding:10px;
     text-transform: uppercase;
 }
+.fa-xmark{
+    color:grey;
+}
